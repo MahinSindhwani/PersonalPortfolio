@@ -311,6 +311,16 @@ section {
     margin: auto 0;
 }
 
+.experience-icon {
+    cursor: default;
+    height: 2rem;
+}
+
+.education-icon {
+    cursor: default;
+    height: 2rem;
+}
+
 /* EXPERIENCE SECTION */
 
 #experience {
