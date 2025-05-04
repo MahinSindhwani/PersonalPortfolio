@@ -155,16 +155,32 @@ section {
 
 .section-container {
     display: flex;
+    gap: 2rem;
 }
 
 /* PROFILE SECTION */
 
 #profile {
+    /* position: relative; */
     display: flex;
     justify-content: center;
     gap: 5rem;
     height: 80vh;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
+
+#profile::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #fff 100%);
+    pointer-events: none;
+  }
+  
 
 .section__pic-container {
     display: flex;
@@ -176,6 +192,13 @@ section {
 .section__text {
     align-self: center;
     text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.section__text .section__text__p1,.section__text .section__text__p2 {
+    color: black; /* <--- Add this for individual parts */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .section__text p {
@@ -203,6 +226,125 @@ section {
     gap: 1rem;
 }
 
+
+/* MATRIX EFFECT ON PROFILE TITLE */
+
+.matrix-text {
+    color: #0f0;
+    font-size: 3rem;
+    /* font-family: monospace; */
+    position: relative;
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+    z-index: 2;
+  }
+  
+  .matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
+  }
+  
+  @keyframes glitch {
+    0%, 100% {
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      transform: translate(0);
+    }
+    33% {
+      clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+      transform: translate(-5px, -5px);
+    }
+    66% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+      transform: translate(5px, 5px);
+    }
+  }
+
+
+/* DROPPING TEXT FOR PROFILE SECTION */
+
+.dropping-texts {
+    display: inline-block;
+    position: relative;
+    height: 2.5rem;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .dropping-texts span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    opacity: 0;
+    animation: roll 27s ease-in-out infinite;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    white-space: nowrap;
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Delay each word's appearance - increased time between words
+  .dropping-texts span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .dropping-texts span:nth-child(2) {
+    animation-delay: 3s;
+  }
+  .dropping-texts span:nth-child(3) {
+    animation-delay: 6s;
+  }
+  .dropping-texts span:nth-child(4) {
+    animation-delay: 9s; */
+  
+  @keyframes roll {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(10px);
+    }
+    3% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    8% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    10% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+/* VIDEO */
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6; /* adjust as needed */
+}
+
 /* ICONS */
 
 .icon {
@@ -224,6 +366,7 @@ section {
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
+    color: white;
 }
 
 .btn-color-1, 
@@ -265,12 +408,17 @@ section {
 }
 
 .about-containers {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
     margin-top: 2rem;
 }
 
 .about-details-container {
+    display: flex;
     justify-content: center;
     flex-direction: column;
 }
@@ -301,6 +449,7 @@ section {
 }
 
 .section-container {
+    display: flex;
     gap: 4rem;
     height: 80%;
 }
@@ -439,3 +588,217 @@ footer p {
     text-align: center;
 }
 
+/* WEBSITE FADE IN */
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+  
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* CARDS FLIP */
+
+.card.details-card{
+    flex: 1 1 250px;
+    min-height: 150px;
+    height: auto;
+    display: flex;
+    position: relative;
+    background: transparent;
+    border-radius: 2rem;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+  
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+  
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.card-front {
+    background: white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+
+/* Project Card Flip Animation Styles */
+
+.project-card {
+    perspective: 1000px;
+    min-height: 450px;
+    min-width: 300px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+  
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+  
+.project-card:hover .project-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.project-card-front, .project-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2rem;
+}
+  
+.project-card-front {
+    position: relative;
+}
+  
+.project-card-back {
+    transform: rotateY(180deg);
+    /* text-align: center;
+    margin-top: 50%; */
+    /* border-radius: 2rem; */
+}
+  
+/* TOOLTIP */
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+  }
+  
+.tooltip .tooltip-content {
+    position: absolute;
+    width: 220px;
+    background-color: rgba(53, 53, 53, 0.95);
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 6px;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    transform-origin: bottom center;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+}
+  
+  /* Arrow at bottom of tooltip */
+.tooltip .tooltip-content::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: rgba(53, 53, 53, 0.95) transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+  
+  /* Custom tooltips for different positions */
+.tooltip.tooltip-left .tooltip-content {
+    left: 0;
+    transform: translateX(0);
+}
+  
+.tooltip.tooltip-left .tooltip-content::after {
+    left: 15%;
+}
+  
+.tooltip.tooltip-left:hover .tooltip-content {
+    transform: translateX(0) translateY(-5px);
+}
+  
+.tooltip.tooltip-right .tooltip-content {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+}
+  
+.tooltip.tooltip-right .tooltip-content::after {
+    left: auto;
+    right: 15%;
+}
+  
+.tooltip.tooltip-right:hover .tooltip-content {
+    transform: translateX(0) translateY(-5px);
+}
+  
+.tooltip:hover h3 {
+    color: #0f0; /* Highlight effect for tooltip trigger */
+}
+
+/* TEXT ANIMATIONS */
+
+.highlighted-scroll-text {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    position: relative;
+}
+  
+.highlight-scroll {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+}
+  
+.highlight-scroll::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.1s linear;
+}
+  
+.highlight-scroll.reveal::after {
+    max-width: 100%;
+}

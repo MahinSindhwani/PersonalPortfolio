@@ -6,7 +6,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
-</head>
+</head>  
 <body>
     <nav id="desktop-nav">
         <div class="logo">Mahin Sindhwani</div>
@@ -37,15 +37,32 @@
     </nav>
 
     <section id="profile">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="./assets/spinningCode.mp4" type="video/mp4" />
+            'Your browser does not support this background sorry :('
+        </video>
         <div class="section__pic-container">
             <img src="./assets/PortfolioPic.jpg" alt="profile picture"/>
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hello I'm</p>
-            <h1 class="title">Mahin Sindhwani</h1>
-            <p class="section__text__p2">Frontend Developer</p>
+            <h1 class="title matrix-text" data-text="Mahin Sindhwani">Mahin Sindhwani</h1>
+            <!-- <p class="section__text__p2">Frontend Developer</p> -->
+            <p class="section__text__p2">
+                <span class="dropping-texts">
+                  <span>Frontend Developer</span>
+                  <span>Backend Developer</span>
+                  <span>Problem Solver</span>
+                  <span>Computer Science Student</span>
+                  <span>AI Enthusiast</span>
+                  <span>Game Logic Enthusiast</span>
+                  <span>Fast Learner</span>
+                  <span>Visual Thinker</span>
+                  <span>Team Player</span>
+                </span>
+            </p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/Resume.pdf')">Download CV</button>
+                <button class="btn btn-color-1" onclick="window.open('./assets/Resume.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Me</button>
             </div>
             <div id="socials-container">
@@ -55,37 +72,73 @@
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="fade-in-section">
         <p class="section__text__p1">Get To Know More</p>
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="section__pic-container">
-                <img src="./assets/AboutPic.jpg" alt="profile pic" class="about-pic"/>
+                <img src="./assets/MahinPicOption1.jpeg" alt="profile pic" class="about-pic"/>
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="experience icon" class="experience-icon"/>
-                        <h3>Experience</h3>
-                        <p>2yr+ <br/> Frontend</p>
+                    <div class="card details-card">
+                        <div class="card-inner">
+                          <div class="card-front">
+                            <div class="details-container">
+                                <img src="./assets/experience.png" alt="experience icon" class="experience-icon" />
+                                <h3>Experience</h3>
+                                <p>3rd Year<br /> CS Student</p>
+                            </div>
+                          </div>
+                          <div class="card-back">
+                            <div class="details-container">
+                                <h3>Highlights</h3>
+                                <p>
+                                    • PAL Leader for Math & CS(python)<br />
+                                    • Software Intern @ Embrays Technologies<br />
+                                    • Courses: DSA, AI Algorithms, Python, Java, OS
+                                </p>
+                            </div>
+                          </div>
+                        </div>
                     </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="education icon" class="education-icon"/>
-                        <h3>Education</h3>
-                        <p>Bachelor of Science<br/> Memorial University of Newfoundland</p>
+                    <div class="card details-card">
+                        <div class="card-inner">
+                          <div class="card-front">
+                            <div class="details-container">
+                                <img src="./assets/education.png" alt="education icon" class="education-icon" />
+                                <h3>Education</h3>
+                                <p>Bachelor of Science<br /> Memorial University of Newfoundland</p>
+                            </div>
+                          </div>
+                          <div class="card-back">
+                            <div class="details-container">
+                                <h3>Highlights</h3>
+                                <p>
+                                    • CS Major • Math Minor<br />
+                                    • GPA: 3.92 (Avg: 89.7%)<br />
+                                    • $4000 Entrance Scholarship
+                                </p>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 <div class="text-container">
-                    <p>
-                    I am a 3rd year computer science major at Memorial University of Newfoundland. My interest into technology was
-                    all because of games. I have always been curious on how things work and that curiosity eventually led to me to
-                    actually start and build the things I was curiopus about. Building whatever you want with a computer and the creative
-                    freedom is what got me into coding. Building robust server architectures and RESTful APIs with a focus on scalability 
-                    and security. Experienced in database design, system optimization, and implementing efficient data processing pipelines.
-                    Strong emphasis on clean code and best practices.My approach to UI design begins in Figma, where I translate inspiration 
-                    from platforms like Pinterest and Awwwards into practical wireframes and mockups. I pride myself on meticulous attention 
-                    to detail, carefully selecting typography, color schemes, and layouts that align with each project's unique requirements
-                     and vision.
+                    <p id="about-highlight" class="highlighted-scroll-text">
+                        My interest in technology started with games. I’ve always been curious about how things work, 
+                        and that curiosity eventually led me to start building the things I used to wonder about. 
+                        I began learning to code on my own as a kid, making small projects, and that’s what got me into 
+                        computer science. I love the creative freedom CS gives; being able to build whatever you imagine 
+                        is an amazing feeling. I’m always exploring new software and technologies, and I genuinely enjoy 
+                        learning just for the fun of it. I’d love to make games in the future, and right now I’m learning 
+                        C++ while working on a few personal projects. I pay a lot of attention to detail and recently got 
+                        into reinforcement learning; I’m currently working on a project that uses it in a game setting. 
+                        I also love teaching what I learn. I work as a PAL leader for Calculus 3 and Introduction to Programming 
+                        with Python, helping students and sharing my enthusiasm and passion with them. I interned at Embrays 
+                        Technologies, where I worked with a professional tech team and saw how powerful great teamwork and 
+                        passion can be. I learned a lot from that experience, and it made me excited to keep working in team 
+                        environments like that.
                     </p>
                 </div>
             </div>
@@ -93,7 +146,7 @@
         <img src="./assets/arrow.png" alt="arrow icon" class="icon arrow" onclick="location.href='#experience'" />
     </section>
 
-    <section id="experience">
+    <section id="experience" class="fade-in-section">
         <p class="section__text__p1">Explore My</p>
         <h1 class="title">Experience</h1>
         <div class="experience-details-container">
@@ -101,53 +154,74 @@
                 <div class="details-container">
                     <h2 class="experience-sub-title">Languages</h2>
                     <div class="article-container">
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Python</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Used Python for data analysis, backend development, and machine learning projects. Familiar with libraries like Pandas, NumPy, and TensorFlow.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Java</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Built desktop applications and Android apps with Java. Implemented data structures and algorithms in academic projects.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>JavaScript</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Proficient in ES6+, DOM manipulation, and modern JS frameworks. Built interactive web applications and single-page apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>HTML</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Expertise in semantic HTML5 markup, accessibility practices, and creating structured web content.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>CSS</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Strong in responsive design, animations, Grid/Flexbox layouts, and CSS preprocessors like SASS.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>React</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Built production-level React applications using hooks, context API, and state management solutions like Redux.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>C++</h3>
                                 <p>Experienced</p>
+                            </div>
+                            <div class="tooltip-content">
+                                Used for algorithm implementation, game development prototypes, and system programming projects.
                             </div>
                         </article>
                     </div>
@@ -155,53 +229,74 @@
                 <div class="details-container">
                     <h2 class="experience-sub-title">Tools</h2>
                     <div class="article-container">
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Git</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Proficient with version control workflows, branching strategies, and collaborative development using Git.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Docker</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Vite</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>NPM</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>VS Code</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Trello</h3>
                                 <p>Experienced</p>
                             </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
+                            </div>
                         </article>
-                        <article>
+                        <article class="tooltip">
                             <img src="./assets/checkmark.png" alt="experience icon" class="icon"/>
                             <div>
                                 <h3>Notion</h3>
                                 <p>Experienced</p>
+                            </div>
+                            <div class="tooltip-content">
+                                Container-based deployment and development environments. Experience with Docker Compose for multi-service apps.
                             </div>
                         </article>
                     </div>
@@ -211,51 +306,97 @@
         <img src="./assets/arrow.png" alt="arrow icon" class="icon arrow" onclick="location.href='#projects'" />
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in-section">
         <p class="section__text__p1">Browse My Recent/Ongoing</p>
         <h1 class="title">Projects</h1>
         <div class="experience-details-container">
             <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-1.png" alt="project 1" class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project One</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Live demo
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-2.png" alt="project 2" class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">Project Two</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Live demo
-                        </button>
+                <div class="details-container color-container project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="article-container">
+                                <img src="./assets/project-1.png" alt="project 1" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title">Project One</h2>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Github
+                                </button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Live demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Project One Details</h3>
+                            <p>This is a full-stack web application built with React and Node.js. The app features user authentication, data visualization, and responsive design. I implemented RESTful APIs and used MongoDB for the database.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/project-3.png" alt="project 3" class="project-img"/>
+                <div class="details-container color-container project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="article-container">
+                                <img src="./assets/project-1.png" alt="project 1" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title">Project One</h2>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Github
+                                </button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Live demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Project One Details</h3>
+                            <p>This is a full-stack web application built with React and Node.js. The app features user authentication, data visualization, and responsive design. I implemented RESTful APIs and used MongoDB for the database.</p>
+                        </div>
                     </div>
-                    <h2 class="experience-sub-title project-title">Project Three</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
-                            Live demo
-                        </button>
+                </div>
+                <div class="details-container color-container project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="article-container">
+                                <img src="./assets/project-1.png" alt="project 1" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title">Project One</h2>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Github
+                                </button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Live demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Project One Details</h3>
+                            <p>This is a full-stack web application built with React and Node.js. The app features user authentication, data visualization, and responsive design. I implemented RESTful APIs and used MongoDB for the database.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-container color-container project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="article-container">
+                                <img src="./assets/project-1.png" alt="project 1" class="project-img"/>
+                            </div>
+                            <h2 class="experience-sub-title project-title">Project One</h2>
+                            <div class="btn-container">
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Github
+                                </button>
+                                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/MahinSindhwani'">
+                                    Live demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Project One Details</h3>
+                            <p>This is a full-stack web application built with React and Node.js. The app features user authentication, data visualization, and responsive design. I implemented RESTful APIs and used MongoDB for the database.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,7 +404,7 @@
         <img src="./assets/arrow.png" alt="arrow icon" class="icon arrow" onclick="location.href='#contact'" />
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in-section">
         <p class="section__text__p1">Get in Touch</p>
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
@@ -290,6 +431,12 @@
         </nav>
         <p>Copywrite &#169; 2025 Mahin Sindhwani All Right Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
+    <script src="fadeScript.js"></script>
+    <script src="reloadScript.js"></script>
+    <script src="videoSpeed.js"></script>
+    <script src="highlightAnimations.js"></script>
+    <script src="droppingText.js"></script>
 </body>
 </html>

@@ -38,6 +38,9 @@
     .about-containers {
         margin-top: 0;
     }
+    .project-card {
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -89,6 +92,11 @@
     }
     .text-container {
         text-align: justify;
+    }
+    .fade-in-section {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 
 }
