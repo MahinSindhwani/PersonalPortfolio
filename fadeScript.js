@@ -9,7 +9,7 @@ const fadeSections = document.querySelectorAll('.fade-in-section');
             }
           });
         }, {
-          threshold: 0.5
+          threshold: 0.3
         });
       
         fadeSections.forEach(section => {

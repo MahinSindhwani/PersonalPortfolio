@@ -43,6 +43,7 @@
     }
 }
 
+
 @media screen and (max-width: 600px) {
     #contact, footer {
         height: 40vh;
@@ -98,5 +99,15 @@
         transform: none !important;
         transition: none !important;
     }
-
 }
+
+@media screen and (width: 1024px) and (height: 600px) {
+
+    .bg-video {
+      transform: scale(1.5);
+      width: 100%;
+    }
+    #profile::after {
+        background: none;
+      }
+  }

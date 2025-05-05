@@ -147,7 +147,8 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
+    height: auto;
+    min-height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -156,6 +157,9 @@ section {
 .section-container {
     display: flex;
     gap: 2rem;
+    margin-top: 2rem; /* Added margin at top */
+    height: auto; /* Changed from fixed height to auto */
+    min-height: 70%; /* Keep minimum height as percentage */
 }
 
 /* PROFILE SECTION */
@@ -168,6 +172,7 @@ section {
     height: 80vh;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
+    overflow: hidden;
 }
 
 #profile::after {
@@ -343,6 +348,7 @@ section {
     object-fit: cover;
     z-index: -1;
     opacity: 0.6; /* adjust as needed */
+    object-fit: cover;
 }
 
 /* ICONS */
@@ -405,6 +411,7 @@ section {
 
 #about {
     position: relative;
+    /* padding-top: 2rem; */
 }
 
 .about-containers {
@@ -414,7 +421,7 @@ section {
     gap: 2rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .about-details-container {
@@ -607,12 +614,14 @@ footer p {
 
 .card.details-card{
     flex: 1 1 250px;
-    min-height: 150px;
+    min-height: 200px;
     height: auto;
     display: flex;
     position: relative;
     background: transparent;
     border-radius: 2rem;
+    perspective: 1000px;
+    margin-bottom: 1rem;
 }
 
 .card-inner {
@@ -637,21 +646,27 @@ footer p {
     display: flex;
     align-items: stretch;
     justify-content: center;
+    overflow: hidden;
 }
 
 .card-front {
     background: white;
+    z-index: 1;
 }
 
 .card-back {
     transform: rotateY(180deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
 }
-
 
 /* Project Card Flip Animation Styles */
 
 .project-card {
+    flex: 1 1 300px;
     perspective: 1000px;
+    max-width: 300px;
     min-height: 450px;
     min-width: 300px;
     width: 100%;
