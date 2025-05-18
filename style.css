@@ -540,12 +540,22 @@ article .icon {
 .project-img {
     border-radius: 2rem;
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
 }
 
 .project-title {
     margin: 1rem;
     color: black;
+    font-size: 1.45rem;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 0;
+    /*word-wrap: break-word;    
+    overflow-wrap: break-word;  
+    white-space: normal;         
+    line-height: 1.3; */
 }
 
 .project-btn {
@@ -671,14 +681,20 @@ footer p {
     flex-direction: column;
 }
 
+.card-back .details-container p {
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+
 /* Project Card Flip Animation Styles */
 
 .project-card {
-    flex: 1 1 300px;
+    flex: 1 1 320px;
     perspective: 1000px;
-    max-width: 300px;
+    max-width: 320px;
     max-height: 350px;
-    min-width: 300px;
+    min-width: 320px;
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -724,12 +740,12 @@ footer p {
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
-    /* text-align: center; */
+    /* text-align: left; */
     /* padding: 1.5rem; */
 }
 
 .project-card-back p {
-    text-align: center;
+    text-align: left;
 }
 
 .project-card-back .btn-container{
@@ -739,13 +755,42 @@ footer p {
     gap: 1rem;
     margin-top: auto;
 }
+
+/* PROJECTS TECH STACK */
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  overflow-x: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: rgb(53, 53, 53); /* Matches your button background */
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge img {
+  width: 16px;
+  height: 16px;
+  /* filter: brightness(0) invert(1); makes icons white */
+}
+
   
 /* TOOLTIP */
 
 .tooltip {
     position: relative;
     cursor: pointer;
-  }
+}
   
 .tooltip .tooltip-content {
     position: absolute;
