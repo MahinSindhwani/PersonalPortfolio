@@ -1,6 +1,6 @@
 # mahinsindhwani
 
-My personal site, live at **[mahinsindhwani.netlify.app](https://mahinsindhwani.netlify.app)**.
+My personal site, live at **[msindhwani.dev](https://msindhwani.dev)**.
 
 A single-page portfolio with a terminal look, inspired by [opencode.ai](https://opencode.ai).
 
@@ -9,7 +9,7 @@ A single-page portfolio with a terminal look, inspired by [opencode.ai](https://
 - React 19 + TypeScript
 - Vite
 - IBM Plex Mono (self-hosted via Fontsource) and Tabler Icons
-- Deployed on Netlify
+- Deployed on GitHub Pages via GitHub Actions
 
 ## Running it locally
 
@@ -42,3 +42,7 @@ src/
 
 - The contact box shows a real `open` / `start` / `xdg-open` command for your OS, so a copied command works in a terminal.
 - On a laptop or desktop: `g` back to top, `n` next section, `r` open resume.
+
+## Deploying
+
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the site and publishes `dist/` to GitHub Pages. `public/CNAME` points it at `msindhwani.dev`.
