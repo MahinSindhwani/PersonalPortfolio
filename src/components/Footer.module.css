@@ -9,6 +9,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   font-size: var(--fs-sm);
@@ -17,6 +18,43 @@
 .links {
   display: flex;
   gap: 24px;
+}
+
+.icon {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .links {
+    gap: 4px;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--text);
+  }
+
+  .link:hover {
+    color: var(--text-strong);
+  }
+
+  .icon {
+    display: block;
+  }
+
+  /* Visually hidden, still read by screen readers. */
+  .linkText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 
 .giant {
