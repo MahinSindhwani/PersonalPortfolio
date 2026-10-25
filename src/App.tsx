@@ -1,10 +1,13 @@
+import Hero from './components/Hero';
+import Nav from './components/Nav';
+
 export default function App() {
   return (
-    <main className="placeholder">
-      <p>
-        <span className="muted">mahin</span>sindhwani
-      </p>
-      <p className="muted">rebuilding in react + typescript…</p>
-    </main>
+    <div className="frame">
+      <Nav />
+      <main>
+        <Hero />
+      </main>
+    </div>
   );
 }

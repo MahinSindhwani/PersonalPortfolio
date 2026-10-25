@@ -1,0 +1,55 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 80px;
+  padding: 12px var(--gutter);
+  border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  color: var(--text-strong);
+}
+
+.wordmarkMuted {
+  color: var(--text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 32px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.link:hover {
+  color: var(--text-strong);
+}
+
+.resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius);
+  background: var(--text-strong);
+  color: var(--bg);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.resume:hover {
+  background: #ffffff;
+}
