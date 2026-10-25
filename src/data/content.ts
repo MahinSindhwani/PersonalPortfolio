@@ -22,7 +22,7 @@ export const profile: Profile = {
   intro:
     'Final-year CS student at Memorial with a year of full-stack experience. I like figuring out how things work, then building them myself.',
   location: "St. John's, NL",
-  email: 'msindhwani@mun.ca',
+  email: 'mahinsindhwani@gmail.com',
   github: 'https://github.com/MahinSindhwani',
   linkedin: 'https://linkedin.com/in/mahinsindhwani',
   resume: '/resume.pdf',
