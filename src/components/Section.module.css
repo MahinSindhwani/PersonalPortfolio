@@ -1,0 +1,77 @@
+.section {
+  padding: var(--section-y) var(--gutter);
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 0;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+/* Shared row layout: label column on the left, content on the right. */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 48px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.rowLabel {
+  flex: 1 1 180px;
+  color: var(--text-muted);
+}
+
+.rowBody {
+  flex: 999 1 560px;
+  min-width: 0;
+}
+
+/* "[*] Title  detail" list used by several sections. */
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullet {
+  display: flex;
+  gap: 14px;
+}
+
+.marker {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.strong {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+/* Bold lead-in followed by a gap, e.g. "Full-stack apps  from the interface..." */
+.lead {
+  margin-right: 1ch;
+}
+
+.bright {
+  color: var(--text-strong);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 14px;
+}

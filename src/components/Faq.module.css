@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item summary {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding: 10px 0;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.item summary::-webkit-details-marker {
+  display: none;
+}
+
+.item summary::before {
+  content: '+';
+  width: 12px;
+  flex-shrink: 0;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.item[open] summary::before {
+  content: '−';
+}
+
+.answer {
+  margin: 0 0 12px 28px;
+  max-width: 680px;
+}
