@@ -1,24 +1,44 @@
-# 🌐 Personal Portfolio
+# mahinsindhwani
 
-This is my personal website where I showcase who I am, what I know, and what I’ve built. It’s a space where I keep everything up to date — from my projects and skills to new things I’m learning.
+My personal site, live at **[mahinsindhwani.netlify.app](https://mahinsindhwani.netlify.app)**.
 
-📍 **Live Site:** [mahinsindhwani.netlify.app](https://mahinsindhwani.netlify.app)
+A single-page portfolio with a terminal look, inspired by [opencode.ai](https://opencode.ai).
 
----
+## Stack
 
-## 🧾 About
+- React 19 + TypeScript
+- Vite
+- IBM Plex Mono (self-hosted via Fontsource) and Tabler Icons
+- Deployed on Netlify
 
-The portfolio includes:
+## Running it locally
 
-- A quick intro about me and my background
-- Technologies I’ve worked with
-- A list of my projects with links
-- Contact info and links to my resume and socials
+Requires Node 22.
 
----
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # type-check and build to dist/
+npm run preview  # serve the production build
+```
 
-## 🚀 Tech Stack
+## Updating content
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+All text on the site lives in [`src/data/content.ts`](src/data/content.ts): experience, projects, stack, awards and the FUQ. The shapes are typed in `src/data/types.ts`, so a missing field fails the build instead of breaking the page.
+
+The resume download is `public/resume.pdf`.
+
+## Project layout
+
+```
+src/
+  components/   one component + CSS module per section
+  data/         content.ts (copy) and types.ts
+  hooks/        keyboard shortcuts and device detection
+  index.css     design tokens and global styles
+```
+
+## Little extras
+
+- The contact box shows a real `open` / `start` / `xdg-open` command for your OS, so a copied command works in a terminal.
+- On a laptop or desktop: `g` back to top, `n` next section, `r` open resume.

@@ -6,7 +6,7 @@
 
 .heading {
   margin: 0;
-  font-size: inherit;
+  font-size: var(--fs-h3);
   font-weight: 400;
 }
 

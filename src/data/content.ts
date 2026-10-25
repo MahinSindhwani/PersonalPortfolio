@@ -32,28 +32,24 @@ export const commandTabs: CommandTab[] = [
   {
     id: 'email',
     label: 'email',
-    prefix: 'open mailto:',
     value: profile.email,
     href: `mailto:${profile.email}`,
   },
   {
     id: 'github',
     label: 'github',
-    prefix: 'open https://',
     value: 'github.com/MahinSindhwani',
     href: profile.github,
   },
   {
     id: 'linkedin',
     label: 'linkedin',
-    prefix: 'open https://',
     value: 'linkedin.com/in/mahinsindhwani',
     href: profile.linkedin,
   },
   {
     id: 'resume',
     label: 'resume',
-    prefix: 'curl -O https://mahinsindhwani.netlify.app/',
     value: 'resume.pdf',
     href: profile.resume,
     download: true,

@@ -16,6 +16,6 @@
 .label {
   display: block;
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: var(--fs-sm);
   color: var(--text-muted);
 }

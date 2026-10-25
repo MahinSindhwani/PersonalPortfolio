@@ -4,7 +4,7 @@
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg-page);
-  font-size: 13px;
+  font-size: var(--fs-sm);
   line-height: 1.75;
 }
 
@@ -26,9 +26,45 @@
   list-style: none;
 }
 
+/* Tree lines drawn with borders, so they stay connected when an entry wraps. */
+.lines li {
+  position: relative;
+  padding-left: 2.5ch;
+}
+
+.lines li::before,
+.lines li::after {
+  content: '';
+  position: absolute;
+  left: 0.5ch;
+  border-color: var(--underline);
+  border-style: solid;
+  border-width: 0;
+}
+
+/* vertical trunk */
+.lines li::before {
+  top: 0;
+  bottom: 0;
+  border-left-width: 1px;
+}
+
+/* the last entry's trunk stops at its branch, like └ */
+.lines li:last-child::before {
+  bottom: auto;
+  height: 0.875em;
+}
+
+/* horizontal branch into the entry */
+.lines li::after {
+  top: 0.875em;
+  width: 1.25ch;
+  border-top-width: 1px;
+}
+
 .line {
   display: grid;
-  grid-template-columns: 2ch 6ch 36ch auto;
+  grid-template-columns: 6ch 36ch auto;
   color: var(--text-muted);
   text-decoration: none;
   white-space: nowrap;
@@ -56,7 +92,7 @@
   margin: 20px 0 0;
   padding: 0;
   list-style: none;
-  font-size: 12px;
+  font-size: var(--fs-xs);
   color: var(--text-muted);
 }
 
@@ -97,17 +133,22 @@
     padding: 24px var(--gutter);
   }
 
-  .line {
-    grid-template-columns: 2ch 6ch 1fr;
-    white-space: normal;
+  .lines li {
     padding-bottom: 6px;
   }
 
+  .line {
+    grid-template-columns: 6ch 1fr;
+    white-space: normal;
+  }
+
   .detail {
-    grid-column: 3;
+    grid-column: 2;
   }
 
   .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     border-left: 0;
     border-top: 1px solid var(--border);
   }

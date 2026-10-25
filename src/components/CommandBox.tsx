@@ -2,12 +2,21 @@ import { IconCheck, IconCopy } from '@tabler/icons-react';
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { commandTabs } from '../data/content';
 import type { CommandTab } from '../data/types';
+import type { Platform } from '../hooks/useDevice';
 import styles from './CommandBox.module.css';
 
-/** What the copy button puts on the clipboard: the email itself, or a full URL. */
-function copyText(tab: CommandTab): string {
-  if (tab.href.startsWith('mailto:')) return tab.value;
-  return new URL(tab.href, window.location.origin).toString();
+/**
+ * A real shell command for the user's OS, so a copied command works when pasted:
+ * macOS `open`, Windows `start` (cmd and PowerShell), Linux `xdg-open`.
+ * Downloads use curl (`curl.exe` on Windows so PowerShell doesn't swap in its own alias).
+ */
+type DesktopPlatform = Exclude<Platform, 'mobile'>;
+
+function buildCommand(tab: CommandTab, platform: DesktopPlatform): string {
+  const target = new URL(tab.href, window.location.origin).href;
+  if (tab.download) return `${platform === 'windows' ? 'curl.exe' : 'curl'} -O ${target}`;
+  const opener = { mac: 'open', windows: 'start', linux: 'xdg-open' }[platform];
+  return `${opener} ${target}`;
 }
 
 async function writeClipboard(text: string): Promise<boolean> {
@@ -19,24 +28,26 @@ async function writeClipboard(text: string): Promise<boolean> {
   }
 }
 
-export default function CommandBox() {
+export default function CommandBox({ platform }: { platform: DesktopPlatform }) {
   const [activeId, setActiveId] = useState(commandTabs[0].id);
   const [copied, setCopied] = useState(false);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const resetTimer = useRef<number | undefined>(undefined);
 
-  const active = commandTabs.find((t) => t.id === activeId) ?? commandTabs[0];
-
   useEffect(() => () => window.clearTimeout(resetTimer.current), []);
 
+  const active = commandTabs.find((t) => t.id === activeId) ?? commandTabs[0];
+  const command = buildCommand(active, platform);
+  const split = command.lastIndexOf(active.value);
+  const before = split >= 0 ? command.slice(0, split) : `${command} `;
+  const after = split >= 0 ? command.slice(split + active.value.length) : '';
+
   function select(index: number) {
-    const tab = commandTabs[index];
-    setActiveId(tab.id);
+    setActiveId(commandTabs[index].id);
     setCopied(false);
     tabRefs.current[index]?.focus();
   }
 
-  // Arrow keys move between tabs, as in a native tab list.
   function onTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = commandTabs.length - 1;
     if (event.key === 'ArrowRight') select(index === last ? 0 : index + 1);
@@ -48,14 +59,15 @@ export default function CommandBox() {
   }
 
   async function onCopy() {
-    const ok = await writeClipboard(copyText(active));
+    const ok = await writeClipboard(command);
     if (!ok) return;
     setCopied(true);
     window.clearTimeout(resetTimer.current);
-    resetTimer.current = window.setTimeout(() => setCopied(false), 1600);
+    resetTimer.current = window.setTimeout(() => setCopied(false), 2000);
   }
 
   const external = !active.download && !active.href.startsWith('mailto:');
+  const copyLabel = `Copy ${active.label} command`;
 
   return (
     <div className={styles.box}>
@@ -86,7 +98,10 @@ export default function CommandBox() {
 
       <div role="tabpanel" id="cmd-panel" aria-labelledby={`cmd-tab-${active.id}`} className={styles.panel}>
         <p className={styles.command}>
-          {active.prefix}
+          <span className={styles.prompt} aria-hidden="true">
+            ${' '}
+          </span>
+          {before}
           <a
             className={styles.value}
             href={active.href}
@@ -96,16 +111,11 @@ export default function CommandBox() {
           >
             {active.value}
           </a>
+          {after}
         </p>
-        <button type="button" className={styles.copy} onClick={onCopy} aria-label={`Copy ${active.label}`}>
-          {copied ? (
-            <>
-              <IconCheck size={16} stroke={2} aria-hidden="true" />
-              copied
-            </>
-          ) : (
-            <IconCopy size={16} stroke={2} aria-hidden="true" />
-          )}
+        <button type="button" className={styles.copy} onClick={onCopy} aria-label={copyLabel} title={copyLabel}>
+          {copied ? <IconCheck size={18} stroke={2} aria-hidden="true" /> : <IconCopy size={18} stroke={2} aria-hidden="true" />}
+          {copied && <span>copied</span>}
         </button>
         <span className="visually-hidden" aria-live="polite">
           {copied ? `${active.label} copied to clipboard` : ''}

@@ -20,7 +20,6 @@ export default function Stack() {
           </div>
         ))}
       </div>
-      <p className={styles.legend}>brighter = what I use most</p>
     </Section>
   );
 }

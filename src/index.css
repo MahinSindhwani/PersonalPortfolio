@@ -10,6 +10,15 @@
   --underline: #5a5454;
 
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Type scale */
+  --fs-xs: 12px; /* badges, key hints */
+  --fs-sm: 13px; /* meta: tech lists, links, labels, terminal panel */
+  --fs-base: 15px; /* body */
+  --fs-lead: 17px; /* hero intro */
+  --fs-h3: 16px; /* company and project names */
+  --fs-h2: 20px; /* section titles */
+  --fs-h1: clamp(28px, 5vw, 40px);
   --frame-width: 1120px;
   --gutter: 64px;
   --section-y: 80px;
@@ -17,8 +26,8 @@
 
   color-scheme: dark;
   font-family: var(--font-mono);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: var(--fs-base);
+  line-height: 1.65;
   color: var(--text);
   background: var(--bg-page);
   -webkit-font-smoothing: antialiased;
@@ -28,6 +37,10 @@
   :root {
     --gutter: 20px;
     --section-y: 56px;
+    --fs-base: 14px;
+    --fs-lead: 16px;
+    --fs-h2: 18px;
+    --fs-h3: 15px;
   }
 }
 
@@ -80,9 +93,7 @@ button {
   white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+/* Sections get tabindex="-1" when jumped to; no focus ring for that. */
+[tabindex='-1']:focus {
+  outline: none;
 }

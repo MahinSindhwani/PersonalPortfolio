@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 16px;
-  font-size: 14px;
+  font-size: var(--fs-sm);
 }
 
 .links {

@@ -20,7 +20,6 @@ export interface Profile {
 export interface CommandTab {
   id: string;
   label: string;
-  prefix: string;
   value: string;
   href: string;
   download?: boolean;

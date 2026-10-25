@@ -8,17 +8,21 @@ import Recognition from './components/Recognition';
 import Stack from './components/Stack';
 import Whoami from './components/Whoami';
 import Work from './components/Work';
+import { useHasKeyboard } from './hooks/useDevice';
+import { useInPageLinks } from './hooks/useInPageLinks';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 
 export default function App() {
-  useKeyboardShortcuts();
+  const hasKeyboard = useHasKeyboard();
+  useKeyboardShortcuts(hasKeyboard);
+  useInPageLinks();
 
   return (
     <div className="frame">
       <Nav />
       <main>
         <Hero />
-        <Whoami />
+        <Whoami showShortcuts={hasKeyboard} />
         <Doing />
         <Stack />
         <Work />
