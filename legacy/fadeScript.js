@@ -5,7 +5,7 @@ const fadeSections = document.querySelectorAll('.fade-in-section');
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
             }else {
-                entry.target.classList.remove('is-visible'); // <-- key change here
+                entry.target.classList.remove('is-visible');
             }
           });
         }, {
