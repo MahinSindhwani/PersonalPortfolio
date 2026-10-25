@@ -1,1 +1,0 @@
-document.querySelector('.bg-video').playbackRate = 0.6;

@@ -1,0 +1,102 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  min-height: 80px;
+  padding: 12px var(--gutter);
+  border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  color: var(--text-strong);
+}
+
+.wordmarkMuted {
+  color: var(--text-muted);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.link:hover {
+  color: var(--text-strong);
+}
+
+.icon {
+  display: none;
+}
+
+/* Outlined so it doesn't pull focus from the page. */
+.resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-strong);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.resume:hover {
+  border-color: var(--text-muted);
+  background: var(--bg-raised);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    min-height: 64px;
+  }
+
+  .wordmark {
+    font-size: 17px;
+  }
+
+  .links {
+    gap: 4px;
+  }
+
+  .link {
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  /* Visually hidden, still read by screen readers. */
+  .linkText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .resume {
+    margin-left: 4px;
+    padding: 0 10px;
+  }
+}

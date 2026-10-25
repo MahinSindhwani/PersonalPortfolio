@@ -1,0 +1,155 @@
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-page);
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+}
+
+.log {
+  flex: 999 1 560px;
+  min-width: 0;
+  padding: 28px 32px;
+  overflow-x: auto;
+}
+
+.task {
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tree lines drawn with borders, so they stay connected when an entry wraps. */
+.lines li {
+  position: relative;
+  padding-left: 2.5ch;
+}
+
+.lines li::before,
+.lines li::after {
+  content: '';
+  position: absolute;
+  left: 0.5ch;
+  border-color: var(--underline);
+  border-style: solid;
+  border-width: 0;
+}
+
+/* vertical trunk */
+.lines li::before {
+  top: 0;
+  bottom: 0;
+  border-left-width: 1px;
+}
+
+/* the last entry's trunk stops at its branch, like └ */
+.lines li:last-child::before {
+  bottom: auto;
+  height: 0.875em;
+}
+
+/* horizontal branch into the entry */
+.lines li::after {
+  top: 0.875em;
+  width: 1.25ch;
+  border-top-width: 1px;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: 6ch 36ch auto;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.line:hover .detail,
+.line:focus-visible .detail {
+  color: var(--text-strong);
+}
+
+.verb,
+.detail {
+  color: var(--text);
+}
+
+.tagline {
+  margin: 20px 0 0;
+  color: var(--text-strong);
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.keys kbd {
+  font: inherit;
+  color: var(--text);
+}
+
+.sidebar {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 32px;
+  border-left: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.groupTitle {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.group dd {
+  margin: 0;
+}
+
+/* Phones: stack the detail under the path instead of side-scrolling. */
+@media (max-width: 720px) {
+  .log,
+  .sidebar {
+    padding: 24px var(--gutter);
+  }
+
+  .lines li {
+    padding-bottom: 6px;
+  }
+
+  .line {
+    grid-template-columns: 6ch 1fr;
+    white-space: normal;
+  }
+
+  .detail {
+    grid-column: 2;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}

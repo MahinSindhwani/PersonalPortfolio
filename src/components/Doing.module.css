@@ -1,0 +1,21 @@
+.intro {
+  margin: 0 0 32px;
+  max-width: 720px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 64px;
+}
+
+.column {
+  flex: 1 1 380px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
