@@ -4,3 +4,8 @@ dist
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+
+# Claude
+Claude outputs/
+.claude/
+CLAUDE.local.md
