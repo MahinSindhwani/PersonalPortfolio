@@ -18,7 +18,7 @@
 .intro {
   margin: 0;
   font-size: var(--fs-lead);
-  max-width: 680px;
+  max-width: var(--measure);
 }
 
 @media (max-width: 720px) {

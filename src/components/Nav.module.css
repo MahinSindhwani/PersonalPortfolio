@@ -21,33 +21,17 @@
   color: var(--text-muted);
 }
 
-.links {
+.actions {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.link:hover {
-  color: var(--text-strong);
-}
-
-.icon {
-  display: none;
-}
-
-/* Outlined so it doesn't pull focus from the page. */
 .resume {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 36px;
+  height: var(--icon-button);
   padding: 0 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -71,32 +55,11 @@
     font-size: 17px;
   }
 
-  .links {
-    gap: 4px;
-  }
-
-  .link {
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-  }
-
-  .icon {
-    display: block;
-  }
-
-  /* Visually hidden, still read by screen readers. */
-  .linkText {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
+  .actions {
+    gap: 8px;
   }
 
   .resume {
-    margin-left: 4px;
     padding: 0 10px;
   }
 }

@@ -32,5 +32,5 @@
 
 .answer {
   margin: 0 0 12px 28px;
-  max-width: 680px;
+  max-width: var(--measure);
 }

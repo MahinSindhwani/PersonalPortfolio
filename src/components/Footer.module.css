@@ -15,48 +15,6 @@
   font-size: var(--fs-sm);
 }
 
-.links {
-  display: flex;
-  gap: 24px;
-}
-
-.icon {
-  display: none;
-}
-
-@media (max-width: 720px) {
-  .links {
-    gap: 4px;
-  }
-
-  .link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    color: var(--text);
-  }
-
-  .link:hover {
-    color: var(--text-strong);
-  }
-
-  .icon {
-    display: block;
-  }
-
-  /* Visually hidden, still read by screen readers. */
-  .linkText {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-}
-
 .giant {
   margin-bottom: -0.08em;
   font-size: clamp(64px, 15vw, 168px);
@@ -64,6 +22,6 @@
   font-weight: 700;
   letter-spacing: -0.06em;
   white-space: nowrap;
-  color: #231e1e;
+  color: var(--text-ghost);
   user-select: none;
 }
