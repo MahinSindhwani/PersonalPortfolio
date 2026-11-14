@@ -1,0 +1,40 @@
+:root {
+  --bg-page: #0c0c0e;
+  --bg: #131010;
+  --bg-raised: #181414;
+  --text: #b8b2b2;
+  --text-strong: #f2eded;
+  --text-muted: #8a8484;
+  --text-ghost: #231e1e;
+  --border: #3d3838;
+  --underline: #5a5454;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-lead: 17px;
+  --fs-h3: 16px;
+  --fs-h2: 20px;
+  --fs-h1: clamp(28px, 5vw, 40px);
+
+  --frame-width: 1120px;
+  --measure: 720px;
+  --gutter: 64px;
+  --section-y: 80px;
+  --radius: 6px;
+  --tap-target: 44px;
+  --icon-button: 36px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 20px;
+    --section-y: 56px;
+    --fs-base: 14px;
+    --fs-lead: 16px;
+    --fs-h2: 18px;
+    --fs-h3: 15px;
+  }
+}

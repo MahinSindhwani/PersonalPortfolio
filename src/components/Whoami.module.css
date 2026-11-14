@@ -26,7 +26,7 @@
   list-style: none;
 }
 
-/* Tree lines drawn with borders, so they stay connected when an entry wraps. */
+/* The tree is drawn with borders, not box characters, so it stays connected when an entry wraps. */
 .lines li {
   position: relative;
   padding-left: 2.5ch;
@@ -42,20 +42,17 @@
   border-width: 0;
 }
 
-/* vertical trunk */
 .lines li::before {
   top: 0;
   bottom: 0;
   border-left-width: 1px;
 }
 
-/* the last entry's trunk stops at its branch, like └ */
 .lines li:last-child::before {
   bottom: auto;
   height: 0.875em;
 }
 
-/* horizontal branch into the entry */
 .lines li::after {
   top: 0.875em;
   width: 1.25ch;
@@ -85,51 +82,8 @@
   color: var(--text-strong);
 }
 
-.keys {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  margin: 20px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-}
-
-.keys kbd {
-  font: inherit;
-  color: var(--text);
-}
-
-.sidebar {
-  flex: 1 1 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 28px 32px;
-  border-left: 1px solid var(--border);
-  background: var(--bg);
-}
-
-.group {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
-
-.groupTitle {
-  color: var(--text-strong);
-  font-weight: 700;
-}
-
-.group dd {
-  margin: 0;
-}
-
-/* Phones: stack the detail under the path instead of side-scrolling. */
 @media (max-width: 720px) {
-  .log,
-  .sidebar {
+  .log {
     padding: 24px var(--gutter);
   }
 
@@ -144,12 +98,5 @@
 
   .detail {
     grid-column: 2;
-  }
-
-  .sidebar {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-left: 0;
-    border-top: 1px solid var(--border);
   }
 }

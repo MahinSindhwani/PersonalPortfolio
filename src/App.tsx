@@ -5,10 +5,10 @@ import Hero from './components/Hero';
 import Nav from './components/Nav';
 import Projects from './components/Projects';
 import Recognition from './components/Recognition';
-import Stack from './components/Stack';
+import Skills from './components/Skills';
 import Whoami from './components/Whoami';
 import Work from './components/Work';
-import { useHasKeyboard } from './hooks/useDevice';
+import { useHasKeyboard } from './hooks/useHasKeyboard';
 import { useInPageLinks } from './hooks/useInPageLinks';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 
@@ -24,7 +24,7 @@ export default function App() {
         <Hero />
         <Whoami showShortcuts={hasKeyboard} />
         <Doing />
-        <Stack />
+        <Skills />
         <Work />
         <Projects />
         <Recognition />

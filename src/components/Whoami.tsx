@@ -1,7 +1,8 @@
-import { sidebar, whoami, whoamiTagline } from '../data/content';
+import { WHOAMI_LINES, WHOAMI_TAGLINE } from '../data/whoami';
+import ShortcutHints from './ShortcutHints';
+import Sidebar from './Sidebar';
 import styles from './Whoami.module.css';
 
-/** The terminal-style summary panel under the hero. */
 export default function Whoami({ showShortcuts }: { showShortcuts: boolean }) {
   return (
     <section className={styles.panel} aria-label="Summary">
@@ -10,7 +11,7 @@ export default function Whoami({ showShortcuts }: { showShortcuts: boolean }) {
           * Task <span className={styles.verb}>"whoami"</span>
         </p>
         <ul className={styles.lines}>
-          {whoami.map((line) => (
+          {WHOAMI_LINES.map((line) => (
             <li key={line.target}>
               <a className={styles.line} href={line.href}>
                 <span className={styles.verb}>{line.verb}</span>
@@ -20,32 +21,10 @@ export default function Whoami({ showShortcuts }: { showShortcuts: boolean }) {
             </li>
           ))}
         </ul>
-        <p className={styles.tagline}>{whoamiTagline}</p>
-        {showShortcuts && (
-          <ul className={styles.keys} aria-label="Keyboard shortcuts">
-            <li>
-              <kbd>g</kbd> back to top
-            </li>
-            <li>
-              <kbd>n</kbd> next section
-            </li>
-            <li>
-              <kbd>r</kbd> open resume
-            </li>
-          </ul>
-        )}
+        <p className={styles.tagline}>{WHOAMI_TAGLINE}</p>
+        {showShortcuts && <ShortcutHints />}
       </div>
-
-      <aside className={styles.sidebar} aria-label="At a glance">
-        {sidebar.map((group) => (
-          <dl key={group.title} className={styles.group}>
-            <dt className={styles.groupTitle}>{group.title}</dt>
-            {group.items.map((item) => (
-              <dd key={item}>{item}</dd>
-            ))}
-          </dl>
-        ))}
-      </aside>
+      <Sidebar />
     </section>
   );
 }

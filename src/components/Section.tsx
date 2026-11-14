@@ -17,5 +17,3 @@ export default function Section({ id, title, children }: SectionProps) {
     </section>
   );
 }
-
-export { styles as sectionStyles };

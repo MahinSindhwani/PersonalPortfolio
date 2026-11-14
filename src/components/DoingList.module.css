@@ -1,0 +1,10 @@
+.column {
+  flex: 1 1 380px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}

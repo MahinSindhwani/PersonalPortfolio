@@ -1,0 +1,21 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: var(--tap-target);
+  min-height: var(--tap-target);
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+}
+
+.button:hover {
+  color: var(--text-strong);
+  background: var(--bg);
+}
