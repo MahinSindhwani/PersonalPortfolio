@@ -1,0 +1,58 @@
+.linksNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.linksFooter {
+  display: flex;
+  gap: 24px;
+}
+
+.linkNav {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.linkNav:hover {
+  color: var(--text-strong);
+}
+
+.icon {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .linksNav,
+  .linksFooter {
+    gap: 4px;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-button);
+    height: var(--icon-button);
+    color: var(--text);
+  }
+
+  .link:hover {
+    color: var(--text-strong);
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}

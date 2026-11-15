@@ -1,0 +1,12 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary {
+  color: var(--text-strong);
+}

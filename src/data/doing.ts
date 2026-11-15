@@ -3,6 +3,9 @@ export interface DoingItem {
   detail: string;
 }
 
+export const DOING_INTRO =
+  "Mostly I build web apps end to end. The rest of the time I'm poking at whatever looks interesting.";
+
 export const USUALLY: DoingItem[] = [
   { title: 'Full-stack apps', detail: 'from the interface to the database' },
   { title: 'Useful tools', detail: 'dashboards and automations that save someone time' },

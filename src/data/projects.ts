@@ -6,49 +6,47 @@ export interface Project {
   stack: string[];
   award?: string;
   links?: Link[];
-  note?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
     name: "B'y Your Side",
+    award: '1st at IBM watsonx Hackathon 2026',
     description:
-      'Healthcare AI assistant that combines patient records with wearable vitals to personalize health alerts.',
-    stack: ['IBM watsonx', 'Python', 'JavaScript'],
-    award: '1st, IBM watsonx Hackathon 2026',
-    note: 'Hackathon build, no public code',
+      'Healthcare AI assistant that blends patient records with wearable vitals to personalize health alerts.',
+    stack: ['ibm watsonx', 'python', 'javascript'],
   },
   {
     name: 'IntuitiveCS',
-    description: 'Interactive logic visualizer, co-developed and used in a first-year course at Memorial.',
-    stack: ['React', 'React Flow'],
+    description: 'Interactive logic visualizer, co-developed and used in COMP 1002 at Memorial.',
+    stack: ['react', 'reactflow'],
     links: [
-      { label: 'Live', href: 'https://intuitivecs.ca/' },
-      { label: 'Code', href: 'https://github.com/Intuitive-CS-Organisation/IntuitiveCS' },
+      { label: 'live', href: 'https://intuitivecs.ca' },
+      { label: 'github', href: 'https://github.com/Intuitive-CS-Organisation/IntuitiveCS' },
     ],
   },
   {
     name: 'Marketplace Negotiator',
-    description: 'Scrapes Facebook Marketplace listings and drafts personalized inquiries with the OpenAI API.',
-    stack: ['Python', 'Selenium', 'OpenAI'],
+    description: 'Scrapes Facebook Marketplace and drafts personalized inquiries with the OpenAI API.',
+    stack: ['python', 'selenium', 'openai'],
     links: [
-      { label: 'Demo', href: 'https://youtu.be/6-_mjKKVqMs' },
-      { label: 'Code', href: 'https://github.com/MahinSindhwani/Marketplace-Negotiator-for-students' },
+      { label: 'demo', href: 'https://youtu.be/6-_mjKKVqMs' },
+      { label: 'github', href: 'https://github.com/MahinSindhwani/Marketplace-Negotiator-for-students' },
     ],
   },
   {
     name: 'Game of Four',
-    description: 'Grid strategy game where players place and rotate pieces under rule constraints. Team project.',
-    stack: ['Java'],
+    description: 'Grid strategy game where players place and rotate pieces under rule constraints. Team OOP project.',
+    stack: ['java'],
     links: [
-      { label: 'Demo', href: 'https://youtu.be/x_Ur_ylPR_M' },
-      { label: 'Code', href: 'https://github.com/MahinSindhwani/Game-of-Four' },
+      { label: 'demo', href: 'https://youtu.be/x_Ur_ylPR_M' },
+      { label: 'github', href: 'https://github.com/MahinSindhwani/Game-of-Four' },
     ],
   },
   {
     name: 'This website',
-    description: 'My portfolio, rebuilt from vanilla JavaScript into React and TypeScript.',
-    stack: ['React', 'TypeScript', 'Vite'],
-    links: [{ label: 'Code', href: 'https://github.com/MahinSindhwani/PersonalPortfolio' }],
+    description: 'Rebuilt from vanilla JS into React and TypeScript. No video backgrounds were harmed.',
+    stack: ['react', 'typescript', 'vite'],
+    links: [{ label: 'github', href: 'https://github.com/MahinSindhwani/PersonalPortfolio' }],
   },
 ];

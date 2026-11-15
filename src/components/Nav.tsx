@@ -1,8 +1,7 @@
-import { NAV_SECTIONS } from '../data/sections';
+import { IconDownload } from '@tabler/icons-react';
 import { PROFILE } from '../data/profile';
-import { RESUME_LINK } from '../lib/contactLinks';
 import { splitName } from '../lib/name';
-import ContactIcon from './ContactIcon';
+import SocialLinks from './SocialLinks';
 import styles from './Nav.module.css';
 
 const WORDMARK = splitName(PROFILE.name.toLowerCase());
@@ -15,18 +14,10 @@ export default function Nav() {
         {WORDMARK.last}
       </a>
       <div className={styles.actions}>
-        <ul className={styles.links}>
-          {NAV_SECTIONS.map((section) => (
-            <li key={section.id}>
-              <a className={styles.link} href={`#${section.id}`}>
-                {section.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a className={styles.resume} href={RESUME_LINK.href} download>
-          <ContactIcon kind={RESUME_LINK.kind} />
-          {RESUME_LINK.label}
+        <SocialLinks placement="nav" />
+        <a className={styles.resume} href={PROFILE.resumePath} download>
+          <IconDownload size={16} stroke={2} aria-hidden="true" />
+          Resume
         </a>
       </div>
     </nav>
