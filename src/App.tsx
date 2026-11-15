@@ -1,4 +1,4 @@
-import Doing from './components/Doing';
+import About from './components/About';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -6,7 +6,6 @@ import Nav from './components/Nav';
 import Projects from './components/Projects';
 import Recognition from './components/Recognition';
 import Skills from './components/Skills';
-import Whoami from './components/Whoami';
 import Work from './components/Work';
 import { useHasKeyboard } from './hooks/useHasKeyboard';
 import { useInPageLinks } from './hooks/useInPageLinks';
@@ -22,15 +21,14 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Whoami showShortcuts={hasKeyboard} />
-        <Doing />
-        <Skills />
         <Work />
         <Projects />
         <Recognition />
+        <Skills />
+        <About />
         <Faq />
       </main>
-      <Footer />
+      <Footer showShortcuts={hasKeyboard} />
     </div>
   );
 }

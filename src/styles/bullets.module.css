@@ -1,7 +1,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14,5 +14,6 @@
 
 .marker {
   flex-shrink: 0;
+  font-family: var(--font-mono);
   color: var(--text-muted);
 }

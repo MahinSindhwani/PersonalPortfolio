@@ -1,11 +1,12 @@
 :root {
   color-scheme: dark;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-base);
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--text);
   background: var(--bg-page);
   -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--border-strong) var(--bg-page);
 }
 
 *,
@@ -21,12 +22,12 @@ body {
 a {
   color: var(--text-strong);
   text-decoration: underline;
-  text-decoration-color: var(--underline);
+  text-decoration-color: var(--border-strong);
   text-underline-offset: 4px;
 }
 
 a:hover {
-  text-decoration-color: var(--text-strong);
+  text-decoration-color: var(--accent);
 }
 
 button {
@@ -34,9 +35,19 @@ button {
   color: inherit;
 }
 
+time,
+kbd {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 :focus-visible {
-  outline: 2px solid var(--text-strong);
-  outline-offset: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Sections receive focus when jumped to, only so screen readers follow along. */

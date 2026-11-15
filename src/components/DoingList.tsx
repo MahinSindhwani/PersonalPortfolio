@@ -12,15 +12,15 @@ interface DoingListProps {
 export default function DoingList({ label, marker, items }: DoingListProps) {
   return (
     <div className={styles.column}>
-      <span className={styles.label}>{label}</span>
-      <ul className={bullets.list}>
+      <h3 className={styles.label}>{label}</h3>
+      <ul className={`${bullets.list} ${styles.list}`}>
         {items.map((item) => (
           <li key={item.title} className={bullets.item}>
             <span className={bullets.marker} aria-hidden="true">
               {marker}
             </span>
             <span>
-              <span className={`${text.strong} ${text.lead}`}>{item.title}</span> {item.detail}
+              <span className={text.strong}>{item.title}</span>, {item.detail}
             </span>
           </li>
         ))}

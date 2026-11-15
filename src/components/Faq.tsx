@@ -1,5 +1,6 @@
 import { useState, type MouseEvent } from 'react';
-import { FAQ, FAQ_TITLE } from '../data/faq';
+import { FAQ } from '../data/faq';
+import { SECTIONS } from '../data/sections';
 import Section from './Section';
 import styles from './Faq.module.css';
 
@@ -14,7 +15,7 @@ export default function Faq() {
   }
 
   return (
-    <Section id="faq" title={FAQ_TITLE}>
+    <Section section={SECTIONS.faq}>
       <div className={styles.list}>
         {FAQ.map((entry, index) => (
           <details key={entry.question} className={styles.item} open={openIndex === index}>

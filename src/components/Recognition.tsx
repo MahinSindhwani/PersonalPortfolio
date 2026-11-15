@@ -1,10 +1,11 @@
 import { RECOGNITION } from '../data/recognition';
+import { SECTIONS } from '../data/sections';
 import FactRows from './FactRows';
 import Section from './Section';
 
 export default function Recognition() {
   return (
-    <Section id="recognition" title="Recognition">
+    <Section section={SECTIONS.recognition}>
       <FactRows facts={RECOGNITION} />
     </Section>
   );
