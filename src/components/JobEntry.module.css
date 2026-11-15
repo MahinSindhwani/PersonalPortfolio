@@ -12,12 +12,14 @@
 
 .summary {
   margin: 0;
+  max-width: var(--measure-narrow);
 }
 
 .highlights {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  max-width: var(--measure-narrow);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -26,4 +28,9 @@
 .highlight {
   display: flex;
   gap: 12px;
+}
+
+.lead {
+  font-weight: 500;
+  color: var(--text-strong);
 }

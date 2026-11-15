@@ -1,9 +1,14 @@
+export interface Highlight {
+  lead: string;
+  detail: string;
+}
+
 export interface Job {
   period: string;
   role: string;
   organisation: string;
-  summary: string;
-  highlights?: string[];
+  summary?: string;
+  highlights?: Highlight[];
   stack?: string[];
 }
 
@@ -12,26 +17,38 @@ export const EXPERIENCE: Job[] = [
     period: '2025-2026',
     role: 'Software Developer Intern',
     organisation: 'Enaimco',
-    summary:
-      'Full-stack developer on a subsea digital twin platform used by offshore engineering teams. I learned to own features end to end, from React and TypeScript interfaces to Express APIs and MongoDB data.',
     highlights: [
-      'Shipped production features engineers relied on day to day, including an ROV utilization dashboard and a valve request workflow.',
-      'Built internal tools that removed developer bottlenecks, letting engineers manage their own files in Azure.',
-      'Used analytics and feature flags to ship more safely and make product decisions based on real usage.',
-      'Won two internal hackathons by applying AI to a real engineering problem.',
+      {
+        lead: 'Shipped 4+ production features',
+        detail: 'that offshore engineering teams relied on day to day, including an ROV utilization dashboard and a valve request workflow.',
+      },
+      {
+        lead: 'Built internal tools',
+        detail: 'that cut hours of manual work, letting engineers manage their own files in Azure Blob Storage.',
+      },
+      {
+        lead: 'Used analytics and feature flags',
+        detail: 'to ship more safely and make product decisions based on real usage.',
+      },
+      {
+        lead: 'Won two internal hackathons',
+        detail: 'by applying AI to real engineering problems.',
+      },
     ],
     stack: ['react', 'typescript', 'cloudscape', 'express', 'mongodb', 'azure'],
   },
   {
     period: '2024-now',
-    role: 'PAL Leader',
+    role: 'Peer Assisted Learning Leader',
     organisation: 'Memorial University',
-    summary: 'Weekly sessions for COMP 1001 and MATH 1001, 5-15 students each, with activities I design myself.',
+    summary:
+      'I run weekly study sessions for first-year computer science and math, explaining hard course topics in plain terms and designing interactive activities students work through together.',
   },
   {
     period: '2024',
     role: 'Software Engineering Intern',
     organisation: 'Embrays Technologies',
     summary: 'Built responsive React components from designs and fixed bugs with the senior team.',
+    stack: ['react', 'javascript'],
   },
 ];
