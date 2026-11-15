@@ -1,4 +1,4 @@
-import Doing from './components/Doing';
+import AtAGlance from './components/AtAGlance';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -6,7 +6,6 @@ import Nav from './components/Nav';
 import Projects from './components/Projects';
 import Recognition from './components/Recognition';
 import Stack from './components/Stack';
-import Whoami from './components/Whoami';
 import Work from './components/Work';
 import { useHasKeyboard } from './hooks/useHasKeyboard';
 import { useInPageLinks } from './hooks/useInPageLinks';
@@ -22,11 +21,10 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Whoami />
-        <Doing />
-        <Stack />
+        <AtAGlance />
         <Work />
         <Projects />
+        <Stack />
         <Recognition />
         <Faq />
       </main>

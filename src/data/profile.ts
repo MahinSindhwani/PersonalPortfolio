@@ -4,7 +4,6 @@ export const PROFILE = {
   region: "St. John's, Newfoundland",
   intro:
     "I build apps people actually want to use, even if sometimes that's just me. I like figuring out how things work, then building them myself.",
-  location: "St. John's, NL",
   email: 'mahinsindhwani@gmail.com',
   githubUrl: 'https://github.com/MahinSindhwani',
   linkedinUrl: 'https://linkedin.com/in/mahinsindhwani',
