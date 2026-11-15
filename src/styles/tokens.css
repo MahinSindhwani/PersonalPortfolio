@@ -27,6 +27,7 @@
   --radius: 6px;
   --tap-target: 44px;
   --icon-button: 36px;
+  --nav-height: 80px;
 }
 
 @media (max-width: 720px) {
@@ -37,5 +38,6 @@
     --fs-lead: 16px;
     --fs-h2: 18px;
     --fs-h3: 15px;
+    --nav-height: 64px;
   }
 }
