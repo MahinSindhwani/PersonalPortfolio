@@ -1,7 +1,6 @@
 export interface StackItem {
   name: string;
   primary?: boolean;
-  note?: string;
 }
 
 export interface StackGroup {
@@ -18,7 +17,6 @@ export const STACK: StackGroup[] = [
       { name: 'python', primary: true },
       { name: 'java' },
       { name: 'dart' },
-      { name: 'rust', note: 'learning' },
     ],
   },
   {
@@ -37,6 +35,8 @@ export const STACK: StackGroup[] = [
     items: [
       { name: 'mongodb', primary: true },
       { name: 'azure', primary: true },
+      { name: 'postgres' },
+      { name: 'supabase' },
       { name: 'pandas' },
       { name: 'numpy' },
     ],
