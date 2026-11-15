@@ -3,11 +3,10 @@ import { PROFILE } from '../data/profile';
 import { SHORTCUTS, type ShortcutAction } from '../data/shortcuts';
 import { isPlainKeyPress } from '../lib/keyboard';
 import { openInNewTab } from '../lib/navigation';
-import { scrollToNextSection, scrollToTop } from '../lib/scroll';
+import { scrollToTop } from '../lib/scroll';
 
 const SHORTCUT_HANDLERS: Record<ShortcutAction, () => void> = {
   top: scrollToTop,
-  nextSection: scrollToNextSection,
   resume: () => openInNewTab(PROFILE.resumePath),
 };
 

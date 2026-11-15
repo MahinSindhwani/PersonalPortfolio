@@ -25,3 +25,11 @@
   color: var(--text-ghost);
   user-select: none;
 }
+
+@media (max-width: 720px) {
+  .email {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap-target);
+  }
+}

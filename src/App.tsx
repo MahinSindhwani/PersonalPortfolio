@@ -22,7 +22,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Whoami showShortcuts={hasKeyboard} />
+        <Whoami />
         <Doing />
         <Stack />
         <Work />
@@ -30,7 +30,7 @@ export default function App() {
         <Recognition />
         <Faq />
       </main>
-      <Footer />
+      <Footer showShortcuts={hasKeyboard} />
     </div>
   );
 }

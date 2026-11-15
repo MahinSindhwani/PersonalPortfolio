@@ -1,4 +1,4 @@
-export type ShortcutAction = 'top' | 'nextSection' | 'resume';
+export type ShortcutAction = 'top' | 'resume';
 
 export interface Shortcut {
   key: string;
@@ -8,6 +8,5 @@ export interface Shortcut {
 
 export const SHORTCUTS: Shortcut[] = [
   { key: 'g', label: 'back to top', action: 'top' },
-  { key: 'n', label: 'next section', action: 'nextSection' },
   { key: 'r', label: 'open resume', action: 'resume' },
 ];
