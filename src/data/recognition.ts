@@ -8,5 +8,4 @@ export const AWARDS: Award[] = [
   { title: 'M.O. Morgan Alumni Scholarship', context: '2026-2027' },
   { title: '2nd of 13', context: 'CyberSafe NL CTF 2025' },
   { title: "Dean's List", context: 'Faculty of Science 2024-2025' },
-  { title: '71st', context: 'ICPC North America Northeast 2023' },
 ];

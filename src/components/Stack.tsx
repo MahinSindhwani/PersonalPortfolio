@@ -1,6 +1,5 @@
 import { STACK } from '../data/stack';
 import rows from '../styles/rows.module.css';
-import text from '../styles/text.module.css';
 import Section from './Section';
 import styles from './Stack.module.css';
 
@@ -15,7 +14,6 @@ export default function Stack() {
               {group.items.map((item) => (
                 <li key={item.name} className={item.primary ? styles.primary : undefined}>
                   {item.name}
-                  {item.note && <span className={text.muted}> ({item.note})</span>}
                 </li>
               ))}
             </ul>

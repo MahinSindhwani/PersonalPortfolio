@@ -7,15 +7,15 @@ export const FAQ_TITLE = 'Frequently unasked questions';
 
 export const FAQ: FaqEntry[] = [
   {
-    question: 'Why did you redesign this website?',
-    answer: 'Because I hated the old one.',
+    question: 'Tabs or spaces?',
+    answer: 'Tabs. Spaces is a red flag.',
   },
   {
-    question: "What would you do if software development doesn't work out?",
-    answer: 'Probably become a chef and maybe open a cafe. Or teach.',
+    question: 'Background music while you work?',
+    answer: 'The Strokes on repeat. Ode to the Mets is peak.',
   },
   {
     question: "Favourite hike in St. John's?",
-    answer: "Cobbler Path. I've done it four times now.",
+    answer: 'Cobblers Path. Done it like 4 times.',
   },
 ];
