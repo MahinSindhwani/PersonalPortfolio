@@ -28,6 +28,8 @@
   --tap-target: 44px;
   --icon-button: 36px;
   --nav-height: 80px;
+  --motion-fast: 180ms;
+  --motion-slow: 320ms;
   --terminal-height: 300px;
 }
 
