@@ -1,0 +1,12 @@
+:root {
+  --duration-entrance: 700ms;
+  --entrance-stagger: 70ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

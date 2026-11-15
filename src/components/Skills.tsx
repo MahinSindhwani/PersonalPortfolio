@@ -1,10 +1,11 @@
+import { SECTIONS } from '../data/sections';
 import { SKILLS } from '../data/skills';
 import FactRows from './FactRows';
 import Section from './Section';
 
 export default function Skills() {
   return (
-    <Section id="skills" title="Skills">
+    <Section section={SECTIONS.skills}>
       <FactRows facts={SKILLS} />
     </Section>
   );

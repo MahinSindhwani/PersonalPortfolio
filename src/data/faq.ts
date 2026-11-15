@@ -3,8 +3,6 @@ export interface FaqEntry {
   answer: string;
 }
 
-export const FAQ_TITLE = 'Frequently unasked questions';
-
 export const FAQ: FaqEntry[] = [
   {
     question: 'Why did you redesign this website?',

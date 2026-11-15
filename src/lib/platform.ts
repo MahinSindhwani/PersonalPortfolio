@@ -1,5 +1,4 @@
 export type Platform = 'mac' | 'windows' | 'linux' | 'mobile';
-export type DesktopPlatform = Exclude<Platform, 'mobile'>;
 
 type NavigatorWithUserAgentData = Navigator & {
   userAgentData?: { platform?: string; mobile?: boolean };

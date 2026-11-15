@@ -1,19 +1,32 @@
-import { useState } from 'react';
 import { PROFILE } from '../data/profile';
-import { detectPlatform } from '../lib/platform';
-import CommandBox from './CommandBox';
+import { CONTACT_LINKS } from '../lib/contactLinks';
+import { splitName } from '../lib/name';
+import AtAGlance from './AtAGlance';
+import ContactButton from './ContactButton';
+import LocalTime from './LocalTime';
 import styles from './Hero.module.css';
 
-export default function Hero() {
-  const [platform] = useState(detectPlatform);
+const NAME = splitName(PROFILE.name);
 
+export default function Hero() {
   return (
     <section id="top" className={styles.hero} aria-labelledby="hero-title">
-      <h1 id="hero-title" className={styles.title}>
-        {PROFILE.headline}
-      </h1>
-      <p className={styles.intro}>{PROFILE.tagline}</p>
-      {platform !== 'mobile' && <CommandBox platform={platform} />}
+      <div className={styles.intro}>
+        <LocalTime />
+        <h1 id="hero-title" className={styles.name}>
+          <span>{NAME.first}</span> <span>{NAME.last}</span>
+        </h1>
+        <p className={styles.headline}>{PROFILE.headline}</p>
+        <p className={styles.tagline}>{PROFILE.tagline}</p>
+        <ul className={styles.contact} aria-label="Contact">
+          {CONTACT_LINKS.map((link, index) => (
+            <li key={link.kind}>
+              <ContactButton link={link} primary={index === 0} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <AtAGlance />
     </section>
   );
 }
