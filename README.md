@@ -24,7 +24,7 @@ npm run preview  # serve the production build
 
 ## Updating content
 
-All text on the site lives in [`src/data/`](src/data), one file per section: `profile.ts`, `experience.ts`, `projects.ts`, `skills.ts`, `recognition.ts`, `faq.ts` and so on. Each file types its own shape, so a missing field fails the build instead of breaking the page.
+All text on the site lives in [`src/data/content.ts`](src/data/content.ts): experience, projects, stack, awards and the FUQ. The shapes are typed in `src/data/types.ts`, so a missing field fails the build instead of breaking the page.
 
 The resume download is `public/resume.pdf`.
 
@@ -32,11 +32,10 @@ The resume download is `public/resume.pdf`.
 
 ```
 src/
-  components/   one component + CSS module each
-  data/         everything the site says, one file per section
-  hooks/        React hooks
-  lib/          logic with no rendering (scrolling, platform, clipboard)
-  styles/       design tokens, base styles and shared CSS modules
+  components/   one component + CSS module per section
+  data/         content.ts (copy) and types.ts
+  hooks/        keyboard shortcuts and device detection
+  index.css     design tokens and global styles
 ```
 
 ## Little extras

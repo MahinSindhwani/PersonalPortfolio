@@ -1,26 +1,28 @@
 import { useState, type MouseEvent } from 'react';
-import { FAQ } from '../data/faq';
-import { SECTIONS } from '../data/sections';
+import { faq, faqTitle } from '../data/content';
 import Section from './Section';
 import styles from './Faq.module.css';
 
-const NONE_OPEN = -1;
-
+/** Accordion: opening one question closes the others. */
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  function toggleQuestion(event: MouseEvent<HTMLElement>, index: number) {
+  function onSummaryClick(event: MouseEvent<HTMLElement>, index: number) {
     event.preventDefault();
-    setOpenIndex((current) => (current === index ? NONE_OPEN : index));
+    setOpenIndex((current) => (current === index ? -1 : index));
   }
 
   return (
-    <Section section={SECTIONS.faq}>
+    <Section id="faq" title={faqTitle}>
       <div className={styles.list}>
-        {FAQ.map((entry, index) => (
-          <details key={entry.question} className={styles.item} open={openIndex === index}>
-            <summary onClick={(event) => toggleQuestion(event, index)}>{entry.question}</summary>
-            <p className={styles.answer}>{entry.answer}</p>
+        {faq.map((item, i) => (
+          <details
+            key={item.question}
+            className={styles.item}
+            open={openIndex === i}
+          >
+            <summary onClick={(e) => onSummaryClick(e, i)}>{item.question}</summary>
+            <p className={styles.answer}>{item.answer}</p>
           </details>
         ))}
       </div>

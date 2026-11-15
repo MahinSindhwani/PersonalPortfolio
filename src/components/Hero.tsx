@@ -1,32 +1,20 @@
-import { PROFILE } from '../data/profile';
-import { CONTACT_LINKS } from '../lib/contactLinks';
-import { splitName } from '../lib/name';
-import AtAGlance from './AtAGlance';
-import ContactButton from './ContactButton';
-import LocalTime from './LocalTime';
+import { useState } from 'react';
+import { profile } from '../data/content';
+import { detectPlatform } from '../hooks/useDevice';
+import CommandBox from './CommandBox';
 import styles from './Hero.module.css';
 
-const NAME = splitName(PROFILE.name);
-
 export default function Hero() {
+  // Terminal commands are no use on a phone, so the command box is desktop-only.
+  const [platform] = useState(detectPlatform);
+
   return (
     <section id="top" className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.intro}>
-        <LocalTime />
-        <h1 id="hero-title" className={styles.name}>
-          <span>{NAME.first}</span> <span>{NAME.last}</span>
-        </h1>
-        <p className={styles.headline}>{PROFILE.headline}</p>
-        <p className={styles.tagline}>{PROFILE.tagline}</p>
-        <ul className={styles.contact} aria-label="Contact">
-          {CONTACT_LINKS.map((link, index) => (
-            <li key={link.kind}>
-              <ContactButton link={link} primary={index === 0} />
-            </li>
-          ))}
-        </ul>
-      </div>
-      <AtAGlance />
+      <h1 id="hero-title" className={styles.title}>
+        {profile.headline}
+      </h1>
+      <p className={styles.intro}>{profile.intro}</p>
+      {platform !== 'mobile' && <CommandBox platform={platform} />}
     </section>
   );
 }

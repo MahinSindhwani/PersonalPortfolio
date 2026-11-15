@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   padding: 64px var(--gutter) 0;
   overflow: hidden;
 }
@@ -18,27 +18,52 @@
 .links {
   display: flex;
   gap: 24px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+}
+
+.icon {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .links {
+    gap: 4px;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--text);
+  }
+
+  .link:hover {
+    color: var(--text-strong);
+  }
+
+  .icon {
+    display: block;
+  }
+
+  /* Visually hidden, still read by screen readers. */
+  .linkText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 
 .giant {
-  margin-top: 16px;
   margin-bottom: -0.08em;
   font-size: clamp(64px, 15vw, 168px);
   line-height: 0.8;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.06em;
   white-space: nowrap;
-  color: var(--text-ghost);
+  color: #231e1e;
   user-select: none;
-}
-
-@media (pointer: coarse) {
-  .row a {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--control-height);
-  }
 }

@@ -1,0 +1,99 @@
+.box {
+  max-width: 720px;
+  margin-top: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  padding: 14px 0 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab[aria-selected='true'] {
+  color: var(--text-strong);
+  border-bottom-color: var(--text-strong);
+}
+
+.panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 20px;
+}
+
+/* The command wraps in its own column; the copy button keeps its spot on the right. */
+.command {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding-block: 10px;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.prompt {
+  user-select: none;
+}
+
+.value {
+  color: var(--text-strong);
+  font-weight: 500;
+}
+
+/* 44px minimum keeps it easy to tap. */
+.copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+}
+
+.copy:hover {
+  color: var(--text-strong);
+  background: var(--bg);
+}
+
+@media (max-width: 720px) {
+  .tabs {
+    gap: 0 16px;
+    padding: 0 16px;
+  }
+
+  .tab {
+    padding-block: 12px 10px;
+    font-size: var(--fs-sm);
+  }
+
+  .panel {
+    padding: 10px 8px 10px 16px;
+    font-size: var(--fs-sm);
+  }
+}
