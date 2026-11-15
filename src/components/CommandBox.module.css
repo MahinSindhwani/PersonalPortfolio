@@ -1,6 +1,6 @@
 .box {
   max-width: var(--measure);
-  margin-top: 28px;
+  margin-top: 8px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-raised);
