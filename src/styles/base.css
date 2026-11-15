@@ -5,6 +5,7 @@
   line-height: 1.65;
   color: var(--text);
   background: var(--bg-page);
+  scrollbar-color: var(--underline) var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -16,6 +17,11 @@
 
 body {
   margin: 0;
+}
+
+::selection {
+  background: var(--border);
+  color: var(--text-strong);
 }
 
 a {
