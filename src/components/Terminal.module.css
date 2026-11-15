@@ -1,0 +1,54 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  height: var(--terminal-height);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-page);
+  font-size: var(--fs-sm);
+  cursor: text;
+}
+
+.bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.screen {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.line {
+  display: flex;
+  gap: 1ch;
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.output {
+  margin: 0;
+  color: var(--text);
+}
+
+.prompt {
+  color: var(--text-muted);
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: var(--text-strong);
+  caret-color: var(--text-strong);
+}

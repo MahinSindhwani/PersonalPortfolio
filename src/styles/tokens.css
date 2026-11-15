@@ -17,7 +17,7 @@
   --fs-lead: 17px;
   --fs-h3: 16px;
   --fs-h2: 20px;
-  --fs-h1: clamp(28px, 5vw, 40px);
+  --fs-display: clamp(36px, 6vw, 48px);
 
   --frame-width: 1120px;
   --measure: 720px;
@@ -28,6 +28,7 @@
   --tap-target: 44px;
   --icon-button: 36px;
   --nav-height: 80px;
+  --terminal-height: 300px;
 }
 
 @media (max-width: 720px) {

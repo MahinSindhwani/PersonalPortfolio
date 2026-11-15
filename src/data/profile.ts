@@ -1,8 +1,9 @@
 export const PROFILE = {
   name: 'Mahin Sindhwani',
-  headline: "Full-stack developer from St. John's, Newfoundland",
+  role: 'full-stack developer',
+  region: "St. John's, Newfoundland",
   intro:
-    'Final-year CS student at Memorial with a year of full-stack experience. I like figuring out how things work, then building them myself.',
+    "I build apps people actually want to use, even if sometimes that's just me. I like figuring out how things work, then building them myself.",
   location: "St. John's, NL",
   email: 'mahinsindhwani@gmail.com',
   githubUrl: 'https://github.com/MahinSindhwani',
