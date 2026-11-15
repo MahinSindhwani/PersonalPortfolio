@@ -1,14 +1,10 @@
 .column {
-  flex: 1 1 360px;
+  flex: 1 1 380px;
 }
 
 .label {
-  margin: 0 0 16px;
+  display: block;
+  margin-bottom: 16px;
   font-size: var(--fs-sm);
-  font-weight: 400;
   color: var(--text-muted);
-}
-
-.list {
-  gap: 14px;
 }

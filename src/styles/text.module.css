@@ -1,4 +1,20 @@
 .strong {
   color: var(--text-strong);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.lead {
+  margin-right: 1ch;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: var(--fs-sm);
+}
+
+.bright {
+  color: var(--text-strong);
 }

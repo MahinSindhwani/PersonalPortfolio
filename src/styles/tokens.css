@@ -1,46 +1,41 @@
 :root {
-  --bg-page: #080b0e;
-  --bg: #0d1217;
-  --bg-raised: #121920;
-  --text: #c3cbd2;
-  --text-strong: #f0f3f5;
-  --text-muted: #8794a0;
-  --text-ghost: #161d24;
-  --border: #232d36;
-  --border-strong: #3a4753;
-  --accent: #e9b44c;
-  --accent-ink: #14100a;
+  --bg-page: #0c0c0e;
+  --bg: #131010;
+  --bg-raised: #181414;
+  --text: #b8b2b2;
+  --text-strong: #f2eded;
+  --text-muted: #8a8484;
+  --text-ghost: #231e1e;
+  --border: #3d3838;
+  --underline: #5a5454;
 
-  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
 
-  --fs-xs: 13px;
-  --fs-sm: 14px;
-  --fs-base: 16px;
-  --fs-lead: 19px;
-  --fs-h3: 17px;
-  --fs-h2: 22px;
-  --fs-h1: clamp(44px, 8.4vw, 92px);
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-base: 15px;
+  --fs-lead: 17px;
+  --fs-h3: 16px;
+  --fs-h2: 20px;
+  --fs-h1: clamp(28px, 5vw, 40px);
 
   --frame-width: 1120px;
-  --measure: 68ch;
+  --measure: 720px;
+  --measure-narrow: 680px;
   --gutter: 64px;
-  --section-y: 88px;
+  --section-y: 80px;
   --radius: 6px;
-
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --duration-press: 160ms;
-  --duration-hover: 180ms;
-  --press-scale: 0.97;
-  --control-height: 44px;
-  --label-column: 180px;
+  --tap-target: 44px;
+  --icon-button: 36px;
 }
 
 @media (max-width: 720px) {
   :root {
     --gutter: 20px;
     --section-y: 56px;
-    --fs-lead: 17px;
-    --fs-h2: 20px;
+    --fs-base: 14px;
+    --fs-lead: 16px;
+    --fs-h2: 18px;
+    --fs-h3: 15px;
   }
 }
