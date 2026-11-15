@@ -34,8 +34,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--icon-button);
-    height: var(--icon-button);
+    width: var(--tap-target);
+    height: var(--tap-target);
     color: var(--text);
   }
 

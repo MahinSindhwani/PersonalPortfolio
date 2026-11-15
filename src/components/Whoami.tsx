@@ -1,9 +1,8 @@
 import { WHOAMI_LINES, WHOAMI_TAGLINE } from '../data/whoami';
-import ShortcutHints from './ShortcutHints';
 import Sidebar from './Sidebar';
 import styles from './Whoami.module.css';
 
-export default function Whoami({ showShortcuts }: { showShortcuts: boolean }) {
+export default function Whoami() {
   return (
     <section className={styles.panel} aria-label="Summary">
       <div className={styles.log}>
@@ -22,7 +21,6 @@ export default function Whoami({ showShortcuts }: { showShortcuts: boolean }) {
           ))}
         </ul>
         <p className={styles.tagline}>{WHOAMI_TAGLINE}</p>
-        {showShortcuts && <ShortcutHints />}
       </div>
       <Sidebar />
     </section>
