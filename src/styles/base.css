@@ -5,6 +5,7 @@
   line-height: 1.65;
   color: var(--text);
   background: var(--bg-page);
+  scroll-padding-top: var(--nav-height);
   scrollbar-color: var(--underline) var(--bg);
   -webkit-font-smoothing: antialiased;
 }

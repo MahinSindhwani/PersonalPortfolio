@@ -4,20 +4,24 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px 16px;
-  min-height: 80px;
+  min-height: var(--nav-height);
   padding: 12px var(--gutter);
   border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg);
 }
 
-.wordmark {
-  font-size: 22px;
+.logo {
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--text-strong);
 }
 
-.wordmarkMuted {
+.bracket {
   color: var(--text-muted);
 }
 
@@ -48,11 +52,11 @@
 
 @media (max-width: 720px) {
   .nav {
-    min-height: 64px;
+    padding-block: 9px;
   }
 
-  .wordmark {
-    font-size: 17px;
+  .logo {
+    font-size: 22px;
   }
 
   .actions {
