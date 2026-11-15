@@ -23,7 +23,7 @@
   --measure: 720px;
   --measure-narrow: 680px;
   --gutter: 64px;
-  --section-y: 80px;
+  --section-y: 56px;
   --radius: 6px;
   --tap-target: 44px;
   --icon-button: 36px;
@@ -34,7 +34,7 @@
 @media (max-width: 720px) {
   :root {
     --gutter: 20px;
-    --section-y: 56px;
+    --section-y: 40px;
     --fs-base: 14px;
     --fs-lead: 16px;
     --fs-h2: 18px;
